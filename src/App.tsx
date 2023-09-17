@@ -4,7 +4,7 @@ import {MenuPage} from "./Component/MenuPage";
 
 function App() {
     return (
-        <div className="App">
+        <div>
             <MenuPage/>
         </div>
     );
