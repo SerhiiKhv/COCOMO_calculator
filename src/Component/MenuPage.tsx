@@ -34,11 +34,13 @@ export const MenuPage = () => {
         let b = 0
         let c = 2.5
         let d = 0
+        let k = 1
 
         if(typeCommand === "Organic"){
             a = 2.4
             b = 1.05
             d = 0.38
+            k = 1.333333331
         }else if(typeCommand === "Semidetach"){
             a = 3
             b = 1.12
@@ -47,6 +49,7 @@ export const MenuPage = () => {
             a = 3.6
             b = 1.2
             d = 0.32
+            k = 0.777775
         }
 
         const eaf = RELY * DATA * CPLX * TIME * STOR * VIRT * TURN * ACAP * AEXP * PCAP * VEXP * LEXP *
@@ -55,7 +58,7 @@ export const MenuPage = () => {
         const PMCheck = a * Math.pow(SIZE, b)
         const TMCheck = c *  Math.pow(PMCheck, d)
         const SSCheck = PMCheck / TMCheck
-        const PMEAF = eaf * a *  Math.pow(SIZE, b)
+        const PMEAF = eaf * a * k *  Math.pow(SIZE, b)
 
         setPM(+PMCheck.toFixed(2))
         setTM(+TMCheck.toFixed(2))
